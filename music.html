@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <head>
+    <!-- Google Font -->
+    <script type="text/javascript" src="player.js"></script>
+<link rel="stylesheet" type="text/css" href="dylan.css">
+    <link href="<link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="stylesheet" 
+        href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dylan.css">
+
+    
+        <title>M U S I C</title>
+</head>
+<body>
+    <nav id="mainNavbar" class="navbar navbar-light navbar-expand-sm py-0 fixed-top">
+        <a href=""target="_blank" class="navbar-brand">DYLAN GORMAN</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a href="projects.html" class="nav-link">PROJECTS</a>
+            </li>
+            <li class="nav-item">
+                <a href="cv.html" class="nav-link">CV</a>
+            </li>
+            <li class="nav-item">
+                <a href="music.html" class="nav-link">MUSIC</a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            
+            </li>
+          </ul> 
+        </div>
+    
+    </nav>
+
+    <div class="row align-items-center content">
+      <div class="col-md-12 text-center order-2 order-md-1">
+        <div class ="row justify-content-center">
+          <div class="col-6 col-lg-6 blurb mb-5 mb-md-0">
+<!-- Full Page Intro -->
+<div class="player py-5">
+  
+  <!-- Define the section for displaying details -->
+  <div class="details">
+    <div class="now-playing"></div>
+    <div class="track-art"></div>
+    <div class="track-name">Track Name</div>
+    <div class="track-artist">Track Artist</div>
+  </div>
+
+  <!-- Define the section for displaying track buttons -->
+  <div class="buttons">
+    <div class="prev-track" onclick="prevTrack()">
+      <i class="fa fa-step-backward fa-2x"></i>
+    </div>
+    <div class="playpause-track" onclick="playpauseTrack()">
+      <i class="fa fa-play-circle fa-5x"></i>
+    </div>
+    <div class="next-track" onclick="nextTrack()">
+      <i class="fa fa-step-forward fa-2x"></i>
+    </div>
+  </div>
+
+  <!-- Define the section for displaying the seek slider-->
+  <div class="slider_container">
+    <div class="current-time">00:00</div>
+    <input type="range" min="1" max="100"
+      value="0" class="seek_slider" onchange="seekTo()">
+    <div class="total-duration">00:00</div>
+  </div>
+
+  <!-- Define the section for displaying the volume slider-->
+  <div class="slider_container">
+    <i class="fa fa-volume-down"></i>
+    <input type="range" min="1" max="100"
+      value="99" class="volume_slider" onchange="setVolume()">
+    <i class="fa fa-volume-up"></i>
+  </div>
+</div>
+        
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
+  <script>
+      $(function () {
+        $(document).scroll(function(){
+          var $nav = $("#mainNavbar");
+          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+        });
+      });
+    </script>
+
+<script src="main.js"></script>
+    
+  <script>// Select all the elements in the HTML page
+    // and assign them to a variable
+    let now_playing = document.querySelector(".now-playing");
+    let track_art = document.querySelector(".track-art");
+    let track_name = document.querySelector(".track-name");
+    let track_artist = document.querySelector(".track-artist");
+    
+    let playpause_btn = document.querySelector(".playpause-track");
+    let next_btn = document.querySelector(".next-track");
+    let prev_btn = document.querySelector(".prev-track");
+    
+    let seek_slider = document.querySelector(".seek_slider");
+    let volume_slider = document.querySelector(".volume_slider");
+    let curr_time = document.querySelector(".current-time");
+    let total_duration = document.querySelector(".total-duration");
+    
+    // Specify globally used values
+    let track_index = 0;
+    let isPlaying = false;
+    let updateTimer;
+    
+    // Create the audio element for the player
+    let curr_track = document.createElement('audio');
+    
+    // Define the list of tracks that have to be played
+    let track_list = [
+    {
+      name: "Bad Bones",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "01 Bad Bones.mp3"
+    },
+    {
+      name: "Gotta Move On",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "02 Gotta Move On.mp3"
+    },
+    {
+      name: "Born In the Real World",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "03 Born In the Real World.mp3",
+    },
+    {
+      name: "Pilot Light",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "04 Pilot Light.mp3",
+    },
+    {
+      name: "Ain't No Body",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "05 Ain't No Body.mp3",
+    },
+    {
+      name: "Punch Drunk",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "06 Punch Drunk.mp3",
+    },
+    {
+      name: "Fingers For Guns (Loaded with Questions)",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "07 Fingers For Guns (Loaded with Questions).mp3",
+    },
+    {
+      name: "Love is a Lie",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "08 Love is a Lie.mp3",
+    },
+    {
+      name: "This Town",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "09 This Town.mp3",
+    },
+    {
+      name: "Moneypowerpeople",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "10 Moneypowerpeople.mp3",
+    },
+    {
+      name: "Medicine Beach",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "11 Medicine Beach.mp3",
+    },
+    {
+      name: "Home is Where the Heart is",
+      artist: "Kill The Young",
+      image: "FFG.jpeg",
+      path: "12 Home is Where the Heart is.mp3",
+    },
+    ];
+    </script>  
+
+<script>function loadTrack(track_index) {
+  // Clear the previous seek timer
+  clearInterval(updateTimer);
+  resetValues();
+  
+  // Load a new track
+  curr_track.src = track_list[track_index].path;
+  curr_track.load();
+  
+  // Update details of the track
+  track_art.style.backgroundImage =
+    "url(" + track_list[track_index].image + ")";
+  track_name.textContent = track_list[track_index].name;
+  track_artist.textContent = track_list[track_index].artist;
+  now_playing.textContent =
+    "PLAYING " + (track_index + 1) + " OF " + track_list.length;
+  
+  // Set an interval of 1000 milliseconds
+  // for updating the seek slider
+  updateTimer = setInterval(seekUpdate, 1000);
+  
+  // Move to the next track if the current finishes playing
+  // using the 'ended' event
+  curr_track.addEventListener("ended", nextTrack);
+  
+  // Apply a random background color
+  random_bg_color();
+  }
+  
+  function random_bg_color() {
+  // Get a random number between 64 to 256
+  // (for getting lighter colors)
+  let red = Math.floor(Math.random() * 256) + 64;
+  let green = Math.floor(Math.random() * 256) + 64;
+  let blue = Math.floor(Math.random() * 256) + 64;
+  
+  // Construct a color withe the given values
+  let bgColor = "rgb(" + red + ", " + green + ", " + blue + ")";
+  
+  // Set the background to the new color
+  document.body.style.background = bgColor;
+  }
+  
+  // Function to reset all values to their default
+  function resetValues() {
+  curr_time.textContent = "00:00";
+  total_duration.textContent = "00:00";
+  seek_slider.value = 0;
+  }
+  </script>
+
+  <script>function playpauseTrack() {
+    // Switch between playing and pausing
+    // depending on the current state
+    if (!isPlaying) playTrack();
+    else pauseTrack();
+    }
+    
+    function playTrack() {
+    // Play the loaded track
+    curr_track.play();
+    isPlaying = true;
+    
+    // Replace icon with the pause icon
+    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+    }
+    
+    function pauseTrack() {
+    // Pause the loaded track
+    curr_track.pause();
+    isPlaying = false;
+    
+    // Replace icon with the play icon
+    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+    }
+    
+    function nextTrack() {
+    // Go back to the first track if the
+    // current one is the last in the track list
+    if (track_index < track_list.length - 1)
+      track_index += 1;
+    else track_index = 0;
+    
+    // Load and play the new track
+    loadTrack(track_index);
+    playTrack();
+    }
+    
+    function prevTrack() {
+    // Go back to the last track if the
+    // current one is the first in the track list
+    if (track_index > 0)
+      track_index -= 1;
+    else track_index = track_list.length - 1;
+      
+    // Load and play the new track
+    loadTrack(track_index);
+    playTrack();
+    }
+    </script>
+
+    <script>function seekTo() {
+      // Calculate the seek position by the
+      // percentage of the seek slider
+      // and get the relative duration to the track
+      seekto = curr_track.duration * (seek_slider.value / 100);
+      
+      // Set the current track position to the calculated seek position
+      curr_track.currentTime = seekto;
+      }
+      
+      function setVolume() {
+      // Set the volume according to the
+      // percentage of the volume slider set
+      curr_track.volume = volume_slider.value / 100;
+      }
+      
+      function seekUpdate() {
+      let seekPosition = 0;
+      
+      // Check if the current track duration is a legible number
+      if (!isNaN(curr_track.duration)) {
+        seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+        seek_slider.value = seekPosition;
+      
+        // Calculate the time left and the total duration
+        let currentMinutes = Math.floor(curr_track.currentTime / 60);
+        let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+        let durationMinutes = Math.floor(curr_track.duration / 60);
+        let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+      
+        // Add a zero to the single digit time values
+        if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+        if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+        if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+        if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+      
+        // Display the updated duration
+        curr_time.textContent = currentMinutes + ":" + currentSeconds;
+        total_duration.textContent = durationMinutes + ":" + durationSeconds;
+      }
+      }
+      </script>
+
+      <script>// Load the first track in the tracklist
+        loadTrack(track_index);
+        </script>
+
+</body>
+    
+<div class = "footer">
+    <div class= "footer_contents"></div>
+    <p>Wesbite Published 2021, &copy; all Artwork and Content Dylan Gorman 2021.</p>
+
+    </div>
+   
+</html>

@@ -1,0 +1,267 @@
+body {
+    background-color: #D3D0CB;
+    font-family: "Comfortaa", "sans-serif";
+    
+}
+.intro p {
+    border: dotted 3px;
+  border-radius: 5px;
+	color: #2D3E50;
+  font-family: "Comfortaa", "sans-serif";
+	font-weight: bold;
+  height: 50px;
+  text-align: center;
+  width: 300px;
+
+}
+#headingGroup p:hover{
+    -webkit-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        transform: scale(0.6);
+        text-shadow:5px 5px 10px #2E5266,5px 5px 8px #2E5266;
+        /* transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s; */
+}
+#headingGroup p{
+    /* -webkit-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        transform: scale(0.6); */
+        transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s;
+}
+#mainNavbar .nav-link:hover{
+    color: #E2C044;
+    transition: color 0.5s ease-in-out, width 2s, ease-in-out 1s;
+    }
+
+#mainNavbar .navbar-brand {
+        color: #D1495B;
+        font-size: 1rem;
+        }
+    #mainNavbar .navbar-brand:hover {
+        color: #9FB1BC;
+        transition:ease-in-out 3ms;
+}
+#headingGroup p{
+    color:white;
+    font-size: 140px;
+    transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s;
+}
+#headingGroup p:hover{
+color: #2E5266;
+text-shadow:5px 5px 10px whitesmoke,5px 5px 8px whitesmoke;
+        /* transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s; */
+}
+#headingGroup h2{
+    color:white;
+}
+.bi{
+    fill:#9FB1BC;  
+}
+.bi:hover{
+    fill:#2E5266;   
+}
+
+.bi:hover{ 
+    border: 0px #2E5266;
+    text-shadow: 0 0 0px #6E8898;
+    transition: all 0.5s ease-in-out, color 2s;
+}
+
+.footer {
+    color: #2E5266;
+    font-size: 10px;
+    padding: 5px; margin: 0px;
+    border-bottom: 0px;
+    position:fixed;
+    bottom:0;
+    left:0;
+       }
+.navbar {
+background:#6E8898;
+
+}
+
+.contact p {
+    font-size: 2rem;
+    }
+
+.cv{
+    padding: 5px
+}
+@media screen 
+    and (min-width: 1201px){
+        #headingGroup p {
+            font-weight: 100;
+            font-size: 8rem;
+  }  
+}
+  @media screen
+  and (min-width: 951px) 
+  and (max-width: 1200px){
+    #headingGroup p {
+        font-weight: 100;
+        font-size: 6rem;
+    }
+}
+
+@media screen 
+  and (min-width: 705px)
+  and (max-width: 950px){
+    #headingGroup p {
+        font-weight: 100;
+        font-size: 4rem;
+    }
+}
+@media screen 
+  and (min-width: 451px) 
+  and (max-width: 704px){
+    #headingGroup p {
+        font-weight: 100;
+        font-size: 2rem;
+    }   
+}
+@media screen 
+  and (max-width: 450px){
+    #headingGroup p {
+        font-weight: 100;
+        font-size: 1rem;
+    }   
+
+}
+
+
+/* music player */
+
+    
+ 
+  /* Using flex with the column direction to
+     align items in a vertical direction */
+  .player {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+    
+  .details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25px;
+  }
+    
+  .track-art {
+    margin: 25px;
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15%;
+  }
+    
+  /* Changing the font sizes to suitable ones */
+  .now-playing {
+    font-size: 1rem;
+  }
+    
+  .track-name {
+    font-size: 1rem;
+  }
+    
+  .track-artist {
+    font-size: 1.5rem;
+  }
+    
+  
+  /* Using flex with the row direction to
+     align items in a horizontal direction */
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+    
+  .playpause-track,
+  .prev-track,
+  .next-track {
+    padding: 25px;
+    opacity: 0.8;
+    
+    /* Smoothly transition the opacity */
+    transition: opacity .2s;
+  }
+    
+  /* Change the opacity when mouse is hovered */
+  .playpause-track:hover,
+  .prev-track:hover,
+  .next-track:hover {
+    opacity: 1.0;
+  }
+    
+  /* Define the slider width so that it scales properly */
+  .slider_container {
+    width: 75%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    
+  /* Modify the appearance of the slider */
+  .seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+    
+  /* Modify the appearance of the slider thumb */
+  .seek_slider::-webkit-slider-thumb,
+  .volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+    
+  /* Change the opacity when mouse is hovered */
+  .seek_slider:hover,
+  .volume_slider:hover {
+    opacity: 1.0;
+  }
+    
+  .seek_slider {
+    width: 60%;
+  }
+    
+  .volume_slider {
+    width: 30%;
+  }
+    
+  .current-time,
+  .total-duration {
+    padding: 10px;
+  }
+    
+  i.fa-volume-down,
+  i.fa-volume-up {
+    padding: 10px;
+  }
+    
+  /* Change the mouse cursor to a pointer
+     when hovered over */
+  i.fa-play-circle,
+  i.fa-pause-circle,
+  i.fa-step-forward,
+  i.fa-step-backward {
+    cursor: pointer;
+  }
