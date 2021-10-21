@@ -4,7 +4,7 @@ body {
     
 }
 #mainNavbar .nav-link:hover{
-  color: #E2C044;
+  color: white;
   transition: color 0.5s ease-in-out, width 2s, ease-in-out 1s;
   }
 
@@ -16,32 +16,46 @@ body {
       color: #9FB1BC;
       transition:ease-in-out 3ms;
 }
+
+
+
 #headingGroup p:hover{
-transform: scale(0.6);
-text-shadow:5px 5px 10px #2E5266,5px 5px 8px #2E5266;
-        transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s;
+    transform: scale(0.6);
+    text-shadow:5px 5px 8px #2E5266,5px 5px 8px #2E5266;
+    transition: color 2s, ease-in-out 2s;
+}
+#headingGroup p :hover{
+  color: #2E5266;
+  text-shadow:5px 5px 8px whitesmoke,5px 5px 8px whitesmoke;
+  transition: color 3s, ease-in-out 3s;
 }
 #headingGroup p {
-    transition: color 1000ms, width 2000ms, ease-in 2000ms, ease-out 2000ms ease-in-out 2000ms;
+    transition: color 2s, ease-in-out 2s;
 }
 
-#headingGroup p{
+#headingGroup a {
     color:white;
     font-size: 140px;
-    transition: color 1s, width 2s, ease-in-out 2s;
+    text-decoration: none;
+    transition: color 2s,ease-in-out 2s;
 }
-#headingGroup p:hover{
-color: #2E5266;
-text-shadow:5px 5px 10px whitesmoke,5px 5px 8px whitesmoke;
-        transition: color 1s, ease-in-out 2s;
+#headingGroup a:hover{
+    transform: scale(0.6);
+    text-shadow:5px 5px 8px #2E5266,5px 5px 8px #2E5266;
+    transition: color 1s, ease-in-out 2s;
 }
+
 #headingGroup h2{
     color:white;
-    transition: color 1000ms, ease-in-out 2000ms;
+    transition: color 1s, ease-in-out 2s;
 }
 #headingGroup h2:hover{
-transform: scale(0.6);
-text-shadow:5px 5px 10px #2E5266,5px 5px 8px #2E5266;
+    transform: scale(0.6);
+    text-shadow:5px 5px 8px #2E5266,5px 5px 8px #2E5266;
+}
+
+#headingGroup h2 a {
+  font-size: 30px;
 }
 .bi{
     fill:#9FB1BC;  
