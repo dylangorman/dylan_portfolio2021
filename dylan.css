@@ -15,16 +15,16 @@ body {
 
 }
 #headingGroup :hover{
-    -webkit-transform: scale(0.6);
-        -ms-transform: scale(0.6);
-        transform: scale(0.6);
-        text-shadow:5px 5px 10px #2E5266,5px 5px 8px #2E5266;
+-webkit-transform: scale(0.6);
+-ms-transform: scale(0.6);
+transform: scale(0.6);
+text-shadow:5px 5px 10px #2E5266,5px 5px 8px #2E5266;
         /* transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s; */
 }
 #headingGroup {
-    /* -webkit-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
         -ms-transform: scale(0.6);
-        transform: scale(0.6); */
+        transform: scale(0.6);
         transition: color 1000ms, width 2000ms, ease-in 2000ms, ease-out 2000ms ease-in-out 2000ms;
 }
 #mainNavbar .nav-link:hover{
