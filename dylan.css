@@ -3,58 +3,50 @@ body {
     font-family: "Comfortaa", "sans-serif";
     
 }
-.intro p {
-    border: dotted 3px;
-  border-radius: 5px;
-	color: #2D3E50;
-  font-family: "Comfortaa", "sans-serif";
-	font-weight: bold;
-  height: 50px;
-  text-align: center;
-  width: 300px;
-
-}
-#headingGroup :hover{
--webkit-transform: scale(0.6);
--ms-transform: scale(0.6);
-transform: scale(0.6);
-text-shadow:5px 5px 10px #2E5266,5px 5px 8px #2E5266;
-        /* transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s; */
-}
-#headingGroup {
-    -webkit-transform: scale(0.6);
-        -ms-transform: scale(0.6);
-        transform: scale(0.6);
-        transition: color 1000ms, width 2000ms, ease-in 2000ms, ease-out 2000ms ease-in-out 2000ms;
-}
 #mainNavbar .nav-link:hover{
-    color: #E2C044;
-    transition: color 0.5s ease-in-out, width 2s, ease-in-out 1s;
-    }
+  color: #E2C044;
+  transition: color 0.5s ease-in-out, width 2s, ease-in-out 1s;
+  }
 
 #mainNavbar .navbar-brand {
-        color: #D1495B;
-        font-size: 1rem;
-        }
-    #mainNavbar .navbar-brand:hover {
-        color: #9FB1BC;
-        transition:ease-in-out 3ms;
+      color: #D1495B;
+      font-size: 1rem;
+      }
+  #mainNavbar .navbar-brand:hover {
+      color: #9FB1BC;
+      transition:ease-in-out 3ms;
 }
+#headingGroup p:hover{
+transform: scale(0.6);
+text-shadow:5px 5px 10px #2E5266,5px 5px 8px #2E5266;
+        transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s;
+}
+#headingGroup p {
+    transition: color 1000ms, width 2000ms, ease-in 2000ms, ease-out 2000ms ease-in-out 2000ms;
+}
+
 #headingGroup p{
     color:white;
     font-size: 140px;
-    transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s;
+    transition: color 1s, width 2s, ease-in-out 2s;
 }
 #headingGroup p:hover{
 color: #2E5266;
 text-shadow:5px 5px 10px whitesmoke,5px 5px 8px whitesmoke;
-        /* transition: color 1s, width 2s, ease-in 2s, ease-out 2s ease-in-out 2s; */
+        transition: color 1s, ease-in-out 2s;
 }
 #headingGroup h2{
     color:white;
+    transition: color 1000ms, ease-in-out 2000ms;
+}
+#headingGroup h2:hover{
+transform: scale(0.6);
+text-shadow:5px 5px 10px #2E5266,5px 5px 8px #2E5266;
 }
 .bi{
     fill:#9FB1BC;  
+    text-shadow: 5 5 10px whitesmoke,5 5 10px whitesmoke;
+
 }
 .bi:hover{
     fill:#2E5266;   
@@ -62,8 +54,8 @@ text-shadow:5px 5px 10px whitesmoke,5px 5px 8px whitesmoke;
 
 .bi:hover{ 
     border: 0px #2E5266;
-    text-shadow: 0 0 0px #6E8898;
-    transition: all 0.5s ease-in-out, color 2s;
+    text-shadow: 5 5 10px whitesmoke,5 5 10px whitesmoke;
+    /* transition: all 0.5s ease-in-out, color 2s; */
 }
 
 .footer {
