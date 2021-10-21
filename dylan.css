@@ -95,7 +95,7 @@ background:#6E8898;
 }
 @media screen 
     and (min-width: 1201px){
-        #headingGroup p {
+        #headingGroup p a {
             font-weight: 100;
             font-size: 8rem;
   }  
@@ -103,7 +103,7 @@ background:#6E8898;
   @media screen
   and (min-width: 951px) 
   and (max-width: 1200px){
-    #headingGroup p {
+    #headingGroup p a {
         font-weight: 100;
         font-size: 6rem;
     }
@@ -112,7 +112,7 @@ background:#6E8898;
 @media screen 
   and (min-width: 705px)
   and (max-width: 950px){
-    #headingGroup p {
+    #headingGroup p a {
         font-weight: 100;
         font-size: 4rem;
     }
@@ -120,20 +120,116 @@ background:#6E8898;
 @media screen 
   and (min-width: 451px) 
   and (max-width: 704px){
-    #headingGroup p {
+    #headingGroup p a {
         font-weight: 100;
         font-size: 2rem;
     }   
 }
 @media screen 
   and (max-width: 450px){
-    #headingGroup p {
-        font-weight: 100;
+    #headingGroup p a { 
+      font-weight: 100;
         font-size: 1rem;
     }   
 
 }
 
+
+@media screen 
+    and (min-width: 1201px){
+        .bi {
+            width: 100px;
+            height:100px
+  }  
+}
+  @media screen
+  and (min-width: 951px) 
+  and (max-width: 1200px){
+    .bi {
+      width: 80px;
+      height:80px
+    }
+}
+
+@media screen 
+  and (min-width: 705px)
+  and (max-width: 950px){
+    .bi {
+        
+      width: 60px;
+      height:60px
+    }
+}
+@media screen 
+  and (min-width: 451px) 
+  and (max-width: 704px){
+    .bi {
+        
+      width: 50px;
+      height: 50px
+    }   
+}
+@media screen 
+  and (max-width: 450px){
+    .bi { 
+      width: 30px;
+      height: 30px
+    }   
+
+}
+
+
+
+@media screen 
+    and (min-width: 1201px){
+        #headingGroup h2 a{
+            font-size: 30px;
+  }  
+}
+  @media screen
+  and (min-width: 951px) 
+  and (max-width: 1200px){
+    #headingGroup h2 a{
+      font-size: 30px;
+    }
+}
+
+@media screen 
+  and (min-width: 705px)
+  and (max-width: 950px){
+    #headingGroup h2 a{
+      font-size: 25px;
+    }
+}
+@media screen 
+  and (min-width: 451px) 
+  and (max-width: 704px){
+    #headingGroup h2 a{
+      font-size: 20px;
+    }
+}
+@media screen 
+  and (max-width: 450px){
+    #headingGroup h2 a { 
+      font-size: 15px;
+    }   
+
+}
+/* form */
+@media screen 
+  and (min-width: 451px) 
+  and (max-width: 704px){
+    .form {
+      width: 400px;
+    }
+}
+@media screen 
+  and (max-width: 450px){
+     .form{ 
+     width: 300px;
+    }   
+
+}
 
 /* music player */
 
