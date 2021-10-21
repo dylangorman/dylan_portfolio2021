@@ -227,9 +227,61 @@ background:#6E8898;
   and (max-width: 450px){
      .form{ 
      width: 300px;
-    }   
+    }  
+
 
 }
+
+/* CV size  */
+@media screen 
+and (min-width:1410px){
+.column{
+  width: 480px
+}
+  
+}
+@media screen 
+    and (min-width: 1201px)
+    and (max-width: 1409px){
+        .column{
+            width: 400px;
+  }  
+}
+  @media screen
+  and (min-width: 1149px) 
+  and (max-width: 1200px){
+    .column{
+      width: 390px;
+    }
+}
+
+@media screen 
+  and (min-width: 1021px)
+  and (max-width: 1148px){
+    .column{
+      width: 350px;
+    }
+}
+@media screen 
+  and (min-width: 872px) 
+  and (max-width: 1021px){
+    .column{
+      width: 300px;
+    }
+}
+@media screen 
+  and (min-width: 815px)
+  and (max-width: 871px){
+    .column { 
+      width: 280px;
+    }  
+  }
+    @media screen
+    and (max-width: 814px) {
+      .column {
+        width: 812px
+      }
+      }
 
 /* music player */
 
